@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--login.fxml-->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/11.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nilay.finalprojectcalculator.LoginController"
+           prefHeight="400.0" prefWidth="400.0">
+
+    <!-- Login Panel -->
+    <VBox fx:id="loginPanel" alignment="CENTER" spacing="15" maxWidth="300">
+        <Label text="Login" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="loginUsername" promptText="Username" prefHeight="40"/>
+        <PasswordField fx:id="loginPassword" promptText="Password" prefHeight="40"/>
+
+        <Label fx:id="loginError" textFill="red" wrapText="true"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Login" onAction="#handleLogin" prefWidth="100" prefHeight="35"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button text="Register" onAction="#showRegister" prefWidth="100" prefHeight="35"/>
+        </HBox>
+    </VBox>
+
+    <!-- Register Panel -->
+    <VBox fx:id="registerPanel" alignment="CENTER" spacing="15" maxWidth="300" visible="false">
+        <Label text="Register" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="registerUsername" promptText="Username" prefHeight="40"/>
+        <PasswordField fx:id="registerPassword" promptText="Password" prefHeight="40"/>
+        <PasswordField fx:id="confirmPassword" promptText="Confirm Password" prefHeight="40"/>
+
+        <Label fx:id="registerError" textFill="red" wrapText="true"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Register" onAction="#handleRegister" prefWidth="100" prefHeight="35"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button text="Back" onAction="#showLogin" prefWidth="100" prefHeight="35"/>
+        </HBox>
+    </VBox>
+
+</StackPane>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--bu uyarıyı silmek için aşağıda 23.0.1 yazan yerleri değiştir başka bişi yok glb-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="550.0" maxWidth="350.0" minHeight="490.0" minWidth="320.0" prefHeight="490.0" prefWidth="320.0" spacing="10" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nilay.finalprojectcalculator.CalculatorController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <!-- Header with User Info and Logout -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label fx:id="userLabel" style="-fx-font-weight: bold;" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleLogout" style="-fx-background-color: #FF3B30; -fx-text-fill: white;" text="Logout">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+    </HBox>
+
+    <!-- Calculator Display -->
+    <Label fx:id="displayLabel" alignment="CENTER_RIGHT" maxWidth="Infinity" prefHeight="60" style="-fx-font-size: 36px; -fx-background-color: #f0f0f0; -fx-padding: 10;" text="0">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+
+    <!-- Calculator Buttons -->
+    <GridPane alignment="CENTER" hgap="5" vgap="5">
+        <!-- Row 1 -->
+        <Button onAction="#handleClearClick" prefHeight="50" prefWidth="70" style="-fx-background-color: #A5A5A5; -fx-alignment: center; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="C" GridPane.columnIndex="0" GridPane.rowIndex="0">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleDeleteClick" prefHeight="50" prefWidth="70" style="-fx-background-color: #A5A5A5; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white; -fx-alignment: center;" text="Del" GridPane.columnIndex="1" GridPane.rowIndex="0">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleSignClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #A5A5A5; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="0">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleOperatorClick" prefHeight="50" prefWidth="70" style="-fx-background-color: #FF9F0A; -fx-alignment: center; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="0">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+
+        <!-- Row 2 -->
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleOperatorClick" prefHeight="50" prefWidth="70" style="-fx-background-color: #FF9F0A; -fx-alignment: center; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="×" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+
+        <!-- Row 3 -->
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="4" GridPane.columnIndex="0" GridPane.rowIndex="2">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-border-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white; -fx-background-radius: 40;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleOperatorClick" prefHeight="50" prefWidth="70" style="-fx-background-color: #FF9F0A; -fx-text-fill: white; -fx-alignment: center; -fx-border-radius: 40; -fx-background-radius: 40; -fx-min-height: 40px; -fx-font-size: 22px; -fx-min-width: 70px;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+
+        <!-- Row 4 -->
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="1" GridPane.columnIndex="0" GridPane.rowIndex="3">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleOperatorClick" prefHeight="50" prefWidth="70" style="-fx-background-color: #FF9F0A; -fx-alignment: center; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+
+        <!-- Row 5 -->
+        <Button onAction="#handleNumberClick" prefHeight="50" prefWidth="145" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleDecimalClick" prefHeight="50" prefWidth="70" style="-fx-alignment: center; -fx-background-color: #505050; -fx-background-radius: 40; -fx-background-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+        <Button onAction="#handleEqualsClick" prefHeight="50" prefWidth="70" style="-fx-background-color: #FF9F0A; -fx-alignment: center; -fx-background-radius: 40; -fx-border-radius: 40; -fx-font-size: 22px; -fx-min-height: 40px; -fx-min-width: 70px; -fx-text-fill: white;" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <!-- History Section -->
+    <Label style="-fx-font-weight: bold;" text="History" textFill="WHITE">
+      <effect>
+         <DropShadow />
+      </effect></Label>
+    <HBox spacing="5">
+        <TextField fx:id="historyField" editable="false" style="-fx-background-color: #f5f5f5;" HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleClearHistory" prefWidth="60" text="Clear">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+    </HBox>
+   <effect>
+      <InnerShadow />
+   </effect>
+
+</VBox>
