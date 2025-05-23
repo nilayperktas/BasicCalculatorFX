@@ -42,6 +42,6 @@ The calculator allows users to perform standard arithmetic operations such as ad
 ## Screenshots
 
 * Login screen
-    ![Login Screen](Login_Screen.png) 
+<img src="images/login.png" width="350">
 * Main view
-    ![Calculator Main View](Calculator_Main_View.png)
+<img src="images/main.png" width="350">
